@@ -1,0 +1,31 @@
+
+
+<div class="user-information">
+    <h3>Hello, {{userInSession.username}}!</h3>
+    <h5>It is {{username.username}}'s profile</h5>
+    <a href="/add-post/create">Add Post</a>
+</div>
+
+{{#each allPosts}} 
+<div class="card user-posts" style="width: 45rem;">
+  <img src="{{imageUrl}}" class="card-img-top" alt="image-alt-text">
+  <div class="card-body">
+     <p>Title: {{title}}</p>
+     <p>Artist: <a href="{{artistLink}}">{{artist}}</a></p>
+    <p class="card-text">User: <a href=""> {{user.username}}</a></p>
+    <a href="/post/{{_id}}" class="btn btn-primary">Post Detail</a>
+  </div>
+</div>
+{{/each}}
+
+{{!-- <div class="user-posts ">
+    <section>
+    <img src="{{imageUrl}}" alt="image-alt-text">
+    <p>Title: {{title}}</p>
+    <p>Artist: <a href="{{artistLink}}">{{artist}}</a></p>
+    <p>User: <a href=""> {{user.username}}</a></p>
+    <a href="/post/{{_id}}">Post Detail</a>
+</section>
+</div> --}}
+
+</div>
