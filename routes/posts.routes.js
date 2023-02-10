@@ -40,7 +40,7 @@ router.post("/add-post/create",fileUploader.single('animal-art-img'), (req, res)
     .catch((err) => console.log(`Whoops! There is an error ${err}`));
 });
 
-router.get("/post/:postId", (req, res) => {
+router.get("/post/:postId", isLoggedIn,(req, res) => {
   const { postId } = req.params;
   Post.findById(postId)
   .populate("user comments")
